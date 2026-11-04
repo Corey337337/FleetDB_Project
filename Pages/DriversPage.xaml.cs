@@ -44,7 +44,6 @@ namespace FleetDB_Project.Pages
 
         public void LoadDrivers()
         {
-
             try
             {
                 string search = SearchBox.Text.Trim();

@@ -20,7 +20,7 @@ namespace FleetDB_Project.Windows
     /// </summary>
     public partial class Home : Window
     {
-        public Home(string email)
+        public Home()
         {
             InitializeComponent();
         }

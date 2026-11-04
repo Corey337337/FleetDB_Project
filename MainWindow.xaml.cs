@@ -60,15 +60,10 @@ namespace FleetDB_Project
                     return;
                 }
 
-                //if (user == null || !PasswordHelper.Verify(password, user.Salt, user.Password))
-                //{
-                //    MessageBox.Show("Неверный логин или пароль.");
-                //    return;
-                //}
             }
 
 
-            var homeWin = new Home(email);
+            var homeWin = new Home();
             Application.Current.MainWindow = homeWin;
             homeWin.Show();
             Close();

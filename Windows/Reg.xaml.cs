@@ -82,19 +82,16 @@ namespace FleetDB_Project.Windows
                 {
                     db.SaveChanges();
                 }
-                catch(Exception ex)
+                catch(Exception)
                 {
-                    var inner = ex;
-                    while (inner.InnerException != null)
-                        inner = inner.InnerException;
 
-                    MessageBox.Show($"Ошибка при сохранении данных: {inner.Message}");
+                    MessageBox.Show($"Ошибка при сохранении данных");
                     return;
                 }
 
                 RegisteredEmail = email;
 
-                MessageBox.Show("Регистрация прошла успешно! Выполните авторизацию!");
+                MessageBox.Show("Регистрация водителя прошла успешно!");
 
                 DialogResult = true;
 
