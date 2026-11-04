@@ -1,0 +1,7 @@
+[Bb]in/
+[Oo]bj/
+.vs/
+packages/
+*.user
+*.mdf
+*.ldf
