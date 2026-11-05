@@ -21,10 +21,6 @@
                            FontSize="28"
                            FontWeight="Bold"
                            HorizontalAlignment="Center"/>
-                <TextBlock Text="Управление автопарком"
-                           Foreground="#78909C"
-                           HorizontalAlignment="Center"
-                           Margin="0,4,0,28"/>
 
                 <StackPanel Margin="0,0,0,16">
                     <TextBlock Text="Email"/>
