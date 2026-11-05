@@ -52,7 +52,7 @@ namespace FleetDB_Project.VehiclesFiles
                     return;
                 }
 
-                int maxYear = DateTime.Now.Year + 1;
+                int maxYear = DateTime.Now.Year;
                 if (year < 1900 || year > maxYear)
                 {
                     MessageBox.Show($"Год выпуска должен быть от 1900 до {maxYear}",
