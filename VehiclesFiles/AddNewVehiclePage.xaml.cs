@@ -29,6 +29,39 @@ namespace FleetDB_Project.VehiclesFiles
         {
             try
             {
+                if (!int.TryParse(YearOfManafacture.Text.Trim(), out int year))
+                {
+                    MessageBox.Show("Год выпуска должен быть целым числом",
+                        "Ошибка ввода", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    YearOfManafacture.Focus();
+                    return;
+                }
+
+                int maxYear = DateTime.Now.Year + 1;
+                if (year < 1900 || year > maxYear)
+                {
+                    MessageBox.Show($"Год выпуска должен быть от 1900 до {maxYear}",
+                        "Ошибка ввода", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    YearOfManafacture.Focus();
+                    return;
+                }
+
+                if (!int.TryParse(Mileage.Text.Trim(), out int mileage))
+                {
+                    MessageBox.Show("Пробег должен быть целым числом.",
+                        "Ошибка ввода", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    Mileage.Focus();
+                    return;
+                }
+
+                if (mileage < 0)
+                {
+                    MessageBox.Show("Пробег должен быть больше 0",
+                        "Ошибка ввода", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    Mileage.Focus();
+                    return;
+                }
+
                 using (var db = new FleetDBEntities())
                 {
                     Vehicles v = new Vehicles();
@@ -46,7 +79,7 @@ namespace FleetDB_Project.VehiclesFiles
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Не удалось сохранить автомобиль! Проверьте подключение к БД! {ex.Message}",
+                MessageBox.Show($"Не удалось сохранить автомобиль! {ex.Message}",
                     "Ошибка",
                     MessageBoxButton.OK,
                     MessageBoxImage.Error
