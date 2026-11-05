@@ -59,6 +59,13 @@ namespace FleetDB_Project.Windows
 
             using (var db = new FleetDBEntities())
             {
+
+                if (!email.Contains("@"))
+                {
+                    MessageBox.Show("Почта должна содержать символ @.");
+                    return;
+                }
+
                 bool emailExists = db.Drivers.Any(x => x.Email == email);
                 if (emailExists)
                 {
